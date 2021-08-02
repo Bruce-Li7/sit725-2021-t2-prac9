@@ -1,0 +1,30 @@
+{
+  "name": "sit725-2021-t2-prac3",
+  "version": "1.0.0",
+  "description": "Week 3 SIT725 practical",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bruce-Li7/sit725-2021-t2-prac3.git"
+  },
+  "author": "Jiaqi Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bruce-Li7/sit725-2021-t2-prac3/issues"
+  },
+  "homepage": "https://github.com/Bruce-Li7/sit725-2021-t2-prac3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "SIT725",
+    "week",
+    "3",
+    "practical"
+  ]
+}
