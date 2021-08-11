@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <title>Jiaqi Li's Portfolio</title>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -19,8 +19,8 @@
                 </a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <a href="index.html" style="align-items: inherit;">JQL's Portfolio</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Information</a></li>
-                    <li><a href="#">Project</a></li>
+                    <li><a href="#infor">Information</a></li>
+                    <li><a href="#card-section">Project</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
     </header>
     <main class="main-body">
         <div class="container">
-            <h1 class="title">Welcome to my Page!</h1>
+            <h1 class="title" id="infor">Welcome to my Page!</h1>
             <div class="row">
                 <p class="flow-text mainText">
                     This my a test for my webpage! Click the button to give commit.
@@ -36,67 +36,96 @@
             </div>
             <div class="row center">
                 <button id="commitButton" onclick="commitButton()"> Commit</button>
-                <button id="addProjectButton" data-target="modal1" class="modal-trigger" > Add Project</button>
+                <button id="addProjectButton" data-target="modal1" class="modal-trigger"> Add Project</button>
             </div>
 
             <!-- card section -->
             <div class="row" id="card-section">
                 <div class="col s6 center-align">
-                  <div class="card medium">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="image/Project1.jpg">
+                    <div class="card medium">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="image/Project1.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">BookEX application Project<i
+                                    class="material-icons right">more_vert</i></span>
+                            <p><a href="#">About Project BookEX</a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">BookEX<i class="material-icons right">close</i></span>
+                            <p class="card-text">This project aims to exchange the books for user.</p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">BookEX application Project<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">About Project 1</a></p>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">BookEX<i class="material-icons right">close</i></span>
-                        <p class="card-text">This project aims to exchange the books for user.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <!-- Modals stucture -->
-            <div id="modal1" class="modal modal-fixed-footer">
-                <div class="row modal-content">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input placeholder="Placeholder" id="title" type="text" class="validate">
-                                <label for="title">Title</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="image" type="text" class="validate">
-                                <label for="image">Image</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="link" type="text" class="validate">
-                                <label for="link">Link</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input id="description" type="text" class="validate">
-                                <label for="description">Description</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12 center-align">
-                                <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
+
+        </div>
+
+        <!-- Modals stucture -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="row modal-content">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="Placeholder" id="title" type="text" class="validate">
+                            <label for="title">Title</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="image" type="text" class="validate">
+                            <label for="image">Image</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="link" type="text" class="validate">
+                            <label for="link">Link</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="description" type="text" class="validate">
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 center-align">
+                            <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         </div>
     </main>
 
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">Add some text here....</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Contact</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Gmail</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2021 Copyright Jiaqi Li
+          </div>
+        </div>
+      </footer>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="env.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
