@@ -6,18 +6,7 @@ let dbConnect = require("./dbConnect");
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
-// const createCollection = (collectionName) => {
-//     client.connect((err,db) => {
-//         projectCollection = client.db().collection(collectionName);
-//         if(!err) {
-//             console.log('MongoDB Connected')
-//         }
-//         else {
-//             console.log("DB Error: ", err);
-//             process.exit(1);
-//         }
-//     })
-// }
+
 
 //routes
 let projectsRoute = require("./routes/codes");
@@ -27,7 +16,6 @@ app.use(express.json());
 app.use(express.static(__dirname+'/public'));
 // app.use(express.urlencoded({ extened: false }));
 app.use("/api/projects", projectsRoute);
-
 
 
 app.get("/test", function (request, response) {
