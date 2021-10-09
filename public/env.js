@@ -22,9 +22,10 @@ const newProjectsUploding = () => {
     let title = $('#title').val();
     let image = $('#image').val();
     let video = $('#video').val();
+    let link = $('#link').val();
     let description = $('#description').val();
 
-    let project = {title, image, video, description};
+    let project = {title, image, video, link, description};
     console.log("Form Data Submitted: ", project);
     uploadProject(project);
 }
@@ -44,7 +45,7 @@ listProjects = (projects) => {
         let item = '<div class="col s6 center-align">' +
             '<div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + project.image + '">' +
             '</div><div class="card-content">' +
-            '<span class="card-title activator grey-text text-darken-4">' + project.title + '<i class="material-icons right">more_vert</i></span><p><a href="' + project.video + '">Video</a></p></div>' +
+            '<span class="card-title activator grey-text text-darken-4">' + project.title + '<i class="material-icons right">more_vert</i></span><p><a href="' + project.video + '">Project Video</a></p><p><a href="' + project.link + '">Repository</a></p></div>' +
             '<div class="card-reveal">' +
             '<span class="card-title grey-text text-darken-4">' + project.title + '<i class="material-icons right">close</i></span>' +
             '<p class="card-text">' + project.description + '</p>' +
