@@ -1,44 +1,44 @@
 # SIT725 individual application
-    This is my personal webpage that aims to learning javascript and node.js. In my application, I want every visiters can learn the programing languages through some validated projects. They can follow the project to learn the way to start the project and learn the technique skills in my webpage. Also, they can upload their perfect projects on the page. 
+This is my personal webpage that aims to learning javascript and node.js. In my application, I want every visiters can learn the programing languages through some validated projects. They can follow the project to learn the way to start the project and learn the technique skills in my webpage. Also, they can upload their perfect projects on the page. 
 
 Build With
 --------------------------------------------------------------------------------
-    In my application I used some major frameworks or tools:
-        *[JQuery](https://jquery.com/)*. 
-        *[Materialize](https://materializecss.com/getting-started.html)*. 
-        *[MongoDB](https://www.mongodb.com/careers/locations/sydney)*. 
-        *[Docker](https://www.docker.com/)*. 
-        *[Socket.IO](https://socket.io/)*. 
+In my application I used some major frameworks or tools:
+*[JQuery](https://jquery.com/)*. 
+*[Materialize](https://materializecss.com/getting-started.html)*. 
+*[MongoDB](https://www.mongodb.com/careers/locations/sydney)*. 
+*[Docker](https://www.docker.com/)*. 
+*[Socket.IO](https://socket.io/)*.
         
 
 # Getting Started
-    You can use $git clone with HTTPS or SSH code clone to your local.
+You can use $git clone with HTTPS or SSH code clone to your local.
 
-    After that, you can use
-        $npm install
-    to install node_modules.
+After that, you can use
+    $npm install
+to install node_modules.
 
-    After installing, run the server using
-        $npm start
+After installing, run the server using
+    $npm start
     
-    Now you should can able to run the server.
+Now you should can able to run the server.
 
-    You can visiting the following URL in your browser:
-        $http://localhost:3000/
+You can visiting the following URL in your browser:*(http://localhost:3000/)*
 
-# files in this repository
+# Files in this repository
+
 
 ## server.js
-    The server is written with node.js. it is listening on port 3000.
+The server is written with node.js. it is listening on port 3000.
 
 ## .gitignore
-    this file list of file patterns that should not be stored in Github.
+this file list of file patterns that should not be stored in Github.
 
 ## LICENSE
-    this repository distributed under the MIT License. You can see text of the LICENSE for more information.
+this repository distributed under the MIT License. You can see text of the LICENSE for more information.
 
 ## package.json
-    this file holds various metadata relevant to the project. This file also handle the project's required dependencies.
+this file holds various metadata relevant to the project. This file also handle the project's required dependencies.
 
 
 Docker
