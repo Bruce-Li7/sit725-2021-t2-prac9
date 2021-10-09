@@ -1,10 +1,10 @@
 {
-  "name": "sit725-2021-t2-prac5",
+  "name": "sit725-2021-t2-prac6",
   "version": "1.0.0",
-  "description": "Week 5 SIT725 practical",
+  "description": "Week 6 SIT725 practical",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --reporter spec",
     "start": "node server.js"
   },
   "repository": {
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/Bruce-Li7/sit725-2021-t2-prac5/issues"
   },
-  "homepage": "https://github.com/Bruce-Li7/sit725-2021-t2-prac5#readme",
+  "homepage": "https://github.com/Bruce-Li7/sit725-2021-t2-prac6#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cf-deployment-tracker-client": "*",
@@ -35,7 +35,7 @@
   "keywords": [
     "SIT725",
     "week",
-    "5",
+    "6",
     "practical"
   ]
 }
