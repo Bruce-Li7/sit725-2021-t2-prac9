@@ -1,66 +1,68 @@
-const commitButton=()=>{
-    let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-width=600,height=300,left=100,top=100`;
+// const commitButton=()=>{
+//     let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+// width=600,height=300,left=100,top=100`;
 
-open('commit.html','', params);
+// open('commit.html','', params);
+// };
+
+const uploadProject=(project)=>{
+    $.ajax({
+      url: '/api/projects',
+      contentType: 'application/json',
+      data: JSON.stringify(project),
+      type: 'POST',
+      success: function(result){
+        alert('Project successfully uploaded')
+      }
+    })
+  }
+  
+
+const newProjectsUploding = () => {
+    let title = $('#title').val();
+    let image = $('#image').val();
+    let video = $('#video').val();
+    let description = $('#description').val();
+
+    let project = {title, image, video, description};
+    console.log("Form Data Submitted: ", project);
+    uploadProject(project);
+}
+
+const requestProjectsUploading = () => {
+    $.get('/api/projects', (projects) => {
+        if (projects.length > 0) {
+            console.log(projects);
+            listProjects(projects);
+        }
+    });
 };
 
-const addProject = (project) => {
-    $.ajax({
-        url: '/api/projects',
-        data: project,
-        type: 'POST',
-        success: (result) => {
-            alert(result.message);
-            location.reload();
-        }
+listProjects = (projects) => {
+    projects.forEach(project => {
+        console.log(project);
+        let item = '<div class="col s6 center-align">' +
+            '<div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + project.image + '">' +
+            '</div><div class="card-content">' +
+            '<span class="card-title activator grey-text text-darken-4">' + project.title + '<i class="material-icons right">more_vert</i></span><p><a href="' + project.video + '">Video</a></p></div>' +
+            '<div class="card-reveal">' +
+            '<span class="card-title grey-text text-darken-4">' + project.title + '<i class="material-icons right">close</i></span>' +
+            '<p class="card-text">' + project.description + '</p>' +
+            '</div></div></div>'
+        $("#ListProjects").append(item);
     })
 }
 
-const submitForm = () => {
-    let formData = {};
-    formData.title = $('#title').val();
-    formData.image = $('#image').val();
-    formData.link = $('#link').val();
-    formData.description = $('#description').val();
 
-    console.log("Form Data Submitted: ", formData);
-    addProject(formData);
-}
-
-const getProjects = () => {
-    $.get('/api/projects',(response) => {
-        if(response.statusCode==200){
-            console.log(response)
-            addCards(response.data);
-        }
-        else {
-            console.log(response)
-        }
-    })
-}
-
-const addCards = (items) => {
-    items.forEach(item => {
-        let itemToAppend = '<div class="col s6 center-align">'+
-    '<div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="'+item.image+'">'+
-    '</div><div class="card-content">'+
-    '<span class="card-title activator grey-text text-darken-4">'+item.title+'<i class="material-icons right">more_vert</i></span><p><a href="#">'+item.link+'</a></p></div>'+
-    '<div class="card-reveal">'+
-        '<span class="card-title grey-text text-darken-4">'+item.title+'<i class="material-icons right">close</i></span>'+
-        '<p class="card-text">'+item.description+'</p>'+
-      '</div></div></div>';
-      $("#card-section").append(itemToAppend)
-    });
-}
-
-
-
-$(document).ready(function(){
-    $('.materialboxed').materialbox();
-    $('#formSubmit').click(()=>{
-        submitForm();
-    })
-    getProjects();
+$(document).ready(function () {
+    requestProjectsUploading();
+    console.log('Ready');
+    // $('.materialboxed').materialbox();
+    // $('#submitForm').click(()=>{
+    //     submitForm();
+    // })
+    $('select').formSelect();
     $('.modal').modal();
-  });
+    // submitForm();
+    // listProjects();
+});

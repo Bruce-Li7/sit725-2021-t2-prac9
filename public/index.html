@@ -35,12 +35,14 @@
                 </p>
             </div>
             <div class="row center">
-                <button id="commitButton" onclick="commitButton()"> Commit</button>
-                <button id="addProjectButton" data-target="modal1" class="modal-trigger"> Add Project</button>
+                <button id="addProjectButton" data-target="upload_modal"
+                    class="waves-effect waves-light btn-large modal-trigger"> Add Project</button> &nbsp; &nbsp;
+                <button id="addCommitButton" data-target="modal2" class="waves-effect waves-light btn-large modal-trigger"> Add Commit</button>
             </div>
 
             <!-- card section -->
-            <div class="row" id="card-section">
+            <div class="row" id="ListProjects">
+
                 <div class="col s6 center-align">
                     <div class="card medium">
                         <div class="card-image waves-effect waves-block waves-light">
@@ -52,22 +54,23 @@
                             <p><a href="#">About Project BookEX</a></p>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">BookEX<i class="material-icons right">close</i></span>
-                            <p class="card-text">This project aims to exchange the books for user.</p>
+                            <span class="card-title grey-text text-darken-4">BookEX<i
+                                    class="material-icons right">close</i></span>
+                            <div class="card-text">
+
+                                <p>This project aims to exchange the books for user.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>
-
-        <!-- Modals stucture -->
-        <div id="modal1" class="modal modal-fixed-footer">
-            <div class="row modal-content">
-                <form class="col s12">
+            <!-- Modals stucture -->
+            <div id="upload_modal" class="modal">
+                <div class="modal-content">
                     <div class="row">
                         <div class="input-field col s6">
-                            <input placeholder="Placeholder" id="title" type="text" class="validate">
+                            <input placeholder="Project title" id="title" type="text" class="validate">
                             <label for="title">Title</label>
                         </div>
                         <div class="input-field col s6">
@@ -77,8 +80,8 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="link" type="text" class="validate">
-                            <label for="link">Link</label>
+                            <input id="video" type="text" class="validate">
+                            <label for="video">Video</label>
                         </div>
                     </div>
                     <div class="row">
@@ -87,47 +90,80 @@
                             <label for="description">Description</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12 center-align">
-                            <a class="waves-effect waves-light btn" id="formSubmit">submit</a>
-                        </div>
+                    <div class="modal-footer"><button onclick="newProjectsUploding()"
+                            class="btn-large waves-effect waves-light" name="submitForm">Submit
+                        </button>
                     </div>
-                </form>
+                </div>
             </div>
+
+
         </div>
+
+
         </div>
     </main>
 
     <footer class="page-footer">
         <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-              <p class="grey-text text-lighten-4">Add some text here....</p>
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">Thanks for visting my webpage! Any question? Contact Me!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="mailto:ohg@deakin.edu.au">Gmail</a></li>
+                        <li><a class="grey-text text-lighten-3" href="https://github.com/Bruce-Li7">Github</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Contact</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Gmail</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">LinkedIn</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div class="footer-copyright">
-          <div class="container">
-          © 2021 Copyright Jiaqi Li
-          </div>
+            <div class="container">
+                © 2021 Copyright Jiaqi Li
+            </div>
         </div>
-      </footer>
+    </footer>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="env.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>
+
+
+
+<!-- Commit modals stucture -->
+<div id="modal2" class="modal modal-fixed-footer">
+    <div class="row modal-content">
+        <form class="col s12">
+            <h1>Commit</h1>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" id="name" class="validate">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="email" id="email" class="validate">
+                    <label for="email">Email Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="comment">Comment: </label>
+                    <input type="text" id="comment">
+
+                </div>
+
+            </div>
+            <button class="submit">Submit</button>
+        </form>
+    </div>
+</div>
