@@ -2,7 +2,6 @@ let client = require("../dbConnect");
 let codesCollection;
 setTimeout(() => {
     codesCollection = client.mongoClient.db().collection("projects");
-
 }, 500)
 
 const getAllCodes = (res) => {

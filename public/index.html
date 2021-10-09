@@ -20,8 +20,8 @@
                 <a href="index.html" style="align-items: inherit;">JQL's Portfolio</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#infor">Information</a></li>
-                    <li><a href="#card-section">Project</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#projectlink">Project</a></li>
+                    <li><a href="#contactlink">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -31,19 +31,22 @@
             <h1 class="title" id="infor">Welcome to my Page!</h1>
             <div class="row">
                 <p class="flow-text mainText">
-                    This my a test for my webpage! Click the button to give commit.
+                    My name is JiaQi Li. In my webpage, you can learn programing skills through the projects. Also, you
+                    can share your projects that you think its pretty well on the webpage. If you have any questions
+                    wnat to communicate with me. You can contact to me, I am really happy to communicate with you!
                 </p>
             </div>
             <div class="row center">
                 <button id="addProjectButton" data-target="upload_modal"
                     class="waves-effect waves-light btn-large modal-trigger"> Add Project</button> &nbsp; &nbsp;
-                <button id="addCommitButton" data-target="modal2" class="waves-effect waves-light btn-large modal-trigger">Commit</button>
+                <button id="addCommitButton" data-target="modal2"
+                    class="waves-effect waves-light btn-large modal-trigger">Commit</button>
             </div>
 
             <!-- card section -->
             <div class="row" id="ListProjects">
 
-                <div class="col s6 center-align">
+                <div id="projectlink" class="col s6 center-align">
                     <div class="card medium">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img class="activator" src="image/Project1.jpg">
@@ -119,7 +122,7 @@
                     <p class="grey-text text-lighten-4">Thanks for visting my webpage! Any question? Contact Me!</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Contact</h5>
+                    <h5 id="contactlink" class="white-text">Contact</h5>
                     <ul>
                         <li><a class="grey-text text-lighten-3" href="mailto:ohg@deakin.edu.au">Gmail</a></li>
                         <li><a class="grey-text text-lighten-3" href="https://github.com/Bruce-Li7">Github</a></li>
@@ -148,38 +151,37 @@
 
 
 <!-- Commit modals stucture -->
-<div id="modal2" class="modal modal-fixed-footer">
-    <div class="row modal-content">
-        <form class="col s12">
-            <h1 class="center">Commit</h1>
-            <p class="center">Leave your commit that I can communicate with you.</p>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input type="text" id="name" class="validate">
-                    <label for="name">Full Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input type="email" id="email" class="validate">
-                    <label for="email">Email Address</label>
-                </div>
+<<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h1 class="center">Commit</h1>
+        <p class="center">Leave your commit that I can communicate with you.</p>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="name" class="validate">
+                <label for="name">Full Name</label>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="project_title">Project Title </label>
-                    <input type="text" id="comment" placeholder="Which project you interest in..">
-
-                </div>
+            <div class="input-field col s6">
+                <input type="email" id="email" class="validate">
+                <label for="email">Email Address</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="projectTitle">Project Title </label>
+                <input type="text" id="projectTitle" placeholder="Which project you interest in..">
 
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <label for="comment">Comment: </label>
-                    <input type="text" id="comment">
 
-                </div>
-
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <label for="comment">Comment: </label>
+                <input type="text" id="comment">
             </div>
-            <button class="submit">Submit</button>
-        </form>
+        </div>
+        <div class="modal-footer"><button onclick="newCommitsUploding()" class="btn-large waves-effect waves-light"
+                name="submitForm">Submit
+            </button>
+        </div>
     </div>
-</div>
+    </div>

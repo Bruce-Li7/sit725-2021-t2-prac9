@@ -10,12 +10,17 @@ let io = require('socket.io')(http);
 
 //routes
 let projectsRoute = require("./routes/codes");
+//commit
+// let commitsRoute = require("./routes/codes");
 
 var port = process.env.port || 3000;
 app.use(express.json());
 app.use(express.static(__dirname+'/public'));
 // app.use(express.urlencoded({ extened: false }));
 app.use("/api/projects", projectsRoute);
+
+//commit
+// app.use("/api/commits", commitsRoute);
 
 
 app.get("/test", function (request, response) {

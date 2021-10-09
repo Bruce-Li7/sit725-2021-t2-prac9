@@ -1,4 +1,3 @@
-/// DATABASE Connections
 //database connection
 const MongoClient = require('mongodb').MongoClient;
 

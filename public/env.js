@@ -13,10 +13,39 @@ const uploadProject=(project)=>{
       type: 'POST',
       success: function(result){
         alert('Project successfully uploaded')
+        location.reload();
       }
     })
   }
-  
+
+//commit
+// const uploadCommit=(commit)=>{
+//     $.ajax({
+//       url: '/api/commits',
+//       contentType: 'application/json',
+//       data: JSON.stringify(commit),
+//       type: 'POST',
+//       success: function(result){
+//         alert('Commit successfully uploaded')
+//         location.reload();
+//       }
+//     })
+//   }
+  //commit
+// const newCommitsUploding = () => {
+//     let name = $('#name').val();
+//     let email = $('#email').val();
+//     let projectTitle = $('#projectTitle').val();
+//     let comment = $('#comment').val();
+
+//     let commit = {name, email, projectTitle, comment};
+//     console.log("Form Data Submitted: ", commit);
+//     uploadCommit(commit);
+// }
+
+
+
+
 
 const newProjectsUploding = () => {
     let title = $('#title').val();
@@ -53,6 +82,14 @@ listProjects = (projects) => {
         $("#ListProjects").append(item);
     })
 }
+
+// let socket = io();
+
+
+// socket.on('number', (msg) => {
+//     console.log('Random number: ' + msg);
+//     $("#socketTitle").html("Random" + msg);
+// })
 
 
 $(document).ready(function () {
