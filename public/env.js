@@ -18,30 +18,30 @@ const uploadProject=(project)=>{
     })
   }
 
-//commit
-// const uploadCommit=(commit)=>{
-//     $.ajax({
-//       url: '/api/commits',
-//       contentType: 'application/json',
-//       data: JSON.stringify(commit),
-//       type: 'POST',
-//       success: function(result){
-//         alert('Commit successfully uploaded')
-//         location.reload();
-//       }
-//     })
-//   }
-  //commit
-// const newCommitsUploding = () => {
-//     let name = $('#name').val();
-//     let email = $('#email').val();
-//     let projectTitle = $('#projectTitle').val();
-//     let comment = $('#comment').val();
+// commit
+const uploadCommit=(commit)=>{
+    $.ajax({
+      url: '/api/commits',
+      contentType: 'application/json',
+      data: JSON.stringify(commit),
+      type: 'POST',
+      success: function(result){
+        alert('Commit successfully uploaded')
+        location.reload();
+      }
+    })
+  }
+//    commit
+const newCommitsUploding = () => {
+    let name = $('#name').val();
+    let email = $('#email').val();
+    let projectTitle = $('#projectTitle').val();
+    let comment = $('#comment').val();
 
-//     let commit = {name, email, projectTitle, comment};
-//     console.log("Form Data Submitted: ", commit);
-//     uploadCommit(commit);
-// }
+    let commit = {name, email, projectTitle, comment};
+    console.log("Form Data Submitted: ", commit);
+    uploadCommit(commit);
+}
 
 
 

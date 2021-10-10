@@ -4,11 +4,11 @@ var Controllers = require("../controllers");
 
 
 router.get('/', (req, res) => {
-    Controllers.codesController.getCodes(res);
+    Controllers.commitsController.getCommits(res);
 })
 
 router.post('/', (req, res) => {
-    Controllers.codesController.createCode(req.body, res);
+    Controllers.commitsController.createCommit(req.body, res); 
 })
 
 

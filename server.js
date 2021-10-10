@@ -11,7 +11,7 @@ let io = require('socket.io')(http);
 //routes
 let projectsRoute = require("./routes/codes");
 //commit
-// let commitsRoute = require("./routes/codes");
+let commitsRoute = require("./routes/commits");
 
 var port = process.env.port || 3000;
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(express.static(__dirname+'/public'));
 app.use("/api/projects", projectsRoute);
 
 //commit
-// app.use("/api/commits", commitsRoute);
+app.use("/api/commits", commitsRoute);
 
 
 app.get("/test", function (request, response) {

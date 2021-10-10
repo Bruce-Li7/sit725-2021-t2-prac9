@@ -1,12 +1,4 @@
 module.exports={
-    codeService:require('./codeService')
+    codeService:require('./codeService'),
+    commitService:require('./commitService')
 }
-
-
-
-
-
-//commit
-// module.exports = {
-//     commitService:require('./commitService')
-// }

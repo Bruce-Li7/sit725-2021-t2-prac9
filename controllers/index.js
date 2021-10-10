@@ -1,3 +1,4 @@
 module.exports={
-    codesController:require('./codesController')
+    codesController:require('./codesController'),
+    commitsController:require('./commitsController')
 }
